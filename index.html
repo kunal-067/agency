@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VERK — Digital Products Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Outfit:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="hero.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+</head>
+
+<body>
+
+    <!-- Cursor -->
+    <div id="cursor"></div>
+    <div id="cursor-ring"></div>
+
+    <!-- ══════════════ NAVBAR ══════════════ -->
+    <nav id="navbar">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">VERK<span class="nav-logo-accent">.</span><span
+                    class="nav-logo-version">v2.4</span></a>
+
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#cases">Work</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#why">About</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+
+            <div class="nav-cta">
+                <div class="nav-status">
+                    <div class="nav-dot"></div>Accepting clients
+                </div>
+                <a href="#cta" class="btn btn-cyan" style="padding:10px 20px;font-size:11px;">Book Free Call</a>
+                <button class="hamburger" id="hamburger" aria-label="menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#services" class="ml">Services</a>
+        <a href="#cases" class="ml">Work</a>
+        <a href="#pricing" class="ml">Pricing</a>
+        <a href="#why" class="ml">About</a>
+        <a href="#cta" class="ml">Contact</a>
+        <a href="#cta" class="btn btn-cyan" style="margin-top:28px;">Book Free Call</a>
+    </div>
+
+    <!-- ══════════════ HERO ══════════════ -->
+    <section class="hero">
+        <div class="grid-bg"></div>
+        <div class="noise"></div>
+        <div class="scanlines"></div>
+        <div class="accent-line"></div>
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+        
+        <!-- TICKER -->
+        <div class="ticker-wrap">
+            <div class="ticker">
+                <span class="tick-item"><span class="tick-dot td-cyan"></span>Web App Development</span>
+                <span class="tick-item"><span class="tick-dot td-purple"></span>UI / UX Design</span>
+                <span class="tick-item"><span class="tick-dot td-amber"></span>Digital Marketing</span>
+                <span class="tick-item"><span class="tick-dot td-red"></span>SEO Optimization</span>
+                <span class="tick-item"><span class="tick-dot td-cyan"></span>Brand Strategy</span>
+                <span class="tick-item"><span class="tick-dot td-purple"></span>E-Commerce Solutions</span>
+                <span class="tick-item"><span class="tick-dot td-amber"></span>Performance Marketing</span>
+                <span class="tick-item"><span class="tick-dot td-red"></span>Social Media Management</span>
+                <span class="tick-item"><span class="tick-dot td-cyan"></span>Mobile Development</span>
+                <span class="tick-item"><span class="tick-dot td-purple"></span>Analytics & Insights</span>
+                <!-- Duplicate for seamless loop -->
+                <span class="tick-item"><span class="tick-dot td-cyan"></span>Web App Development</span>
+                <span class="tick-item"><span class="tick-dot td-purple"></span>UI / UX Design</span>
+                <span class="tick-item"><span class="tick-dot td-amber"></span>Digital Marketing</span>
+                <span class="tick-item"><span class="tick-dot td-red"></span>SEO Optimization</span>
+                <span class="tick-item"><span class="tick-dot td-cyan"></span>Brand Strategy</span>
+                <span class="tick-item"><span class="tick-dot td-purple"></span>E-Commerce Solutions</span>
+                <span class="tick-item"><span class="tick-dot td-amber"></span>Performance Marketing</span>
+                <span class="tick-item"><span class="tick-dot td-red"></span>Social Media Management</span>
+                <span class="tick-item"><span class="tick-dot td-cyan"></span>Mobile Development</span>
+                <span class="tick-item"><span class="tick-dot td-purple"></span>Analytics & Insights</span>
+            </div>
+        </div>
+
+        <div class="hero-inner">
+            <!-- LEFT -->
+            <div class="hero-left">
+                <div class="eyebrow">
+                    <span class="eyebrow-dot"></span>
+                    Digital Agency — Est. 2019
+                </div>
+
+                <h1 class="headline">
+                    <span class="headline-line">WE BUILD</span>
+                    <span class="headline-line">
+                        <span class="word-cycle-wrap">
+                            <span class="word-cycle">
+                                <span class="wc1">DIGITAL</span>
+                                <span class="wc2">FUTURE</span>
+                                <span class="wc3">BRANDS</span>
+                                <span class="wc1">DIGITAL</span>
+                            </span>
+                        </span>
+                    </span>
+                    <span class="headline-line"><span class="hl-outline">EMPIRES</span></span>
+                </h1>
+
+                <p class="sub">
+                    From <strong>blazing-fast web apps</strong> to full-stack <strong>digital marketing
+                        campaigns</strong> — we transform ambitious ideas into market-dominating products. Your growth
+                    is our obsession.
+                </p>
+
+                <div class="cta-group">
+                    <a href="#" class="btn-primary">
+                        Launch Your Project
+                        <svg width="16" height="16" fill="none" viewBox="0 0 16 16">
+                            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                    <a href="#" class="btn-ghost">
+                        <div class="play-icon">
+                            <svg width="10" height="12" fill="none" viewBox="0 0 10 12">
+                                <path d="M1 1l8 5-8 5V1z" fill="#b44bff" stroke="#b44bff" stroke-width="1.2"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        Watch Showreel
+                    </a>
+                </div>
+
+                <!-- <div class="stats">
+                    <div class="stat-item">
+                        <div class="stat-num">250<em>+</em></div>
+                        <div class="stat-label">Projects Launched</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-num">98<em>%</em></div>
+                        <div class="stat-label">Client Retention</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-num">7<em>yr</em></div>
+                        <div class="stat-label">Industry Expertise</div>
+                    </div>
+                </div> -->
+            </div>
+
+            <!-- RIGHT VISUAL -->
+            <div class="hero-right">
+                <div class="visual-wrap">
+                    <!-- Rings -->
+                    <div class="ring ring-1"></div>
+                    <div class="ring ring-2"></div>
+                    <div class="ring ring-3"></div>
+
+                    <!-- Orbiting dots -->
+                    <div class="orbit orbit-1">
+                        <div class="orbit-dot od-cyan"></div>
+                    </div>
+                    <div class="orbit orbit-2">
+                        <div class="orbit-dot od-purple"></div>
+                    </div>
+                    <div class="orbit orbit-3">
+                        <div class="orbit-dot od-amber"></div>
+                    </div>
+
+                    <!-- Center orb -->
+                    <div class="center-orb">
+                        <div class="center-icon">VX</div>
+                        <div class="center-label">Digital Core</div>
+                    </div>
+
+                    <!-- Float Cards -->
+                    <div class="float-card fc-1">
+                        <div class="fc-icon fc-icon-cyan">
+                            <svg width="16" height="16" fill="none" viewBox="0 0 24 24">
+                                <rect x="3" y="3" width="18" height="18" rx="3" stroke="#00f5d4" stroke-width="1.8" />
+                                <path d="M8 12h8M8 8h5M8 16h3" stroke="#00f5d4" stroke-width="1.8"
+                                    stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <div class="fc-info">
+                            <div class="fc-title">Web App Dev</div>
+                            <div class="fc-badge badge-green">● Live</div>
+                        </div>
+                    </div>
+
+                    <div class="float-card fc-2">
+                        <div class="fc-icon fc-icon-amber">
+                            <svg width="16" height="16" fill="none" viewBox="0 0 24 24">
+                                <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="#ffb800" stroke-width="1.8"
+                                    stroke-linejoin="round" />
+                                <path d="M2 17l10 5 10-5M2 12l10 5 10-5" stroke="#ffb800" stroke-width="1.8"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <div class="fc-info">
+                            <div class="fc-title">ROI Boost</div>
+                            <div class="fc-sub">+340% avg growth</div>
+                        </div>
+                        <div class="fc-sparkline">
+                            <span></span><span></span><span></span><span></span><span></span>
+                        </div>
+                    </div>
+
+                    <div class="float-card fc-3">
+                        <div class="fc-icon fc-icon-purple">
+                            <svg width="16" height="16" fill="none" viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="10" stroke="#b44bff" stroke-width="1.8" />
+                                <path d="M12 6v6l4 2" stroke="#b44bff" stroke-width="1.8" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <div class="fc-info">
+                            <div class="fc-title">SEO & Marketing</div>
+                            <div class="fc-badge badge-purple">● Active</div>
+                        </div>
+                    </div>
+
+                    <div class="float-card fc-4">
+                        <div class="fc-icon fc-icon-red">
+                            <svg width="16" height="16" fill="none" viewBox="0 0 24 24">
+                                <path d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0z" stroke="#ff4d6d" stroke-width="1.8" />
+                                <path d="M12 8v4l3 3" stroke="#ff4d6d" stroke-width="1.8" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <div class="fc-info">
+                            <div class="fc-title">UI/UX Design</div>
+                            <div class="fc-sub">250+ Projects Done</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-num">250<em>+</em></div>
+                <div class="stat-label">Projects Launched</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-num">98<em>%</em></div>
+                <div class="stat-label">Client Retention</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-num">7<em>yr</em></div>
+                <div class="stat-label">Industry Expertise</div>
+            </div>
+        </div>
+
+
+        <!-- TRUSTED BY -->
+        <div class="trusted-strip">
+            <span class="trusted-label">Trusted by</span>
+            <div class="trusted-divider"></div>
+            <div class="logo-list">
+                <span class="logo-item">NEXUS</span>
+                <span class="logo-item">ARCVAULT</span>
+                <span class="logo-item">SYNTHOS</span>
+                <span class="logo-item">ZEPHYR</span>
+                <span class="logo-item">QUANTRA</span>
+                <span class="logo-item">LUMINAE</span>
+            </div>
+        </div>
+
+    </section>
+
+    <div class="glitch-rule"></div>
+
+    <!-- ══════════════ SERVICES ══════════════ -->
+    <section class="section" id="services">
+        <div class="inner">
+            <div class="services-layout">
+                <div class="services-sticky">
+                    <div class="section-num">01</div>
+                    <div class="tag">Services</div>
+                    <h2>What We<br>Build For You</h2>
+                    <p>End-to-end digital product development — from the first wireframe to post-launch growth
+                        optimization.</p>
+                    <a href="#cta" class="btn btn-cyan">Start a Project <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <div class="services-list">
+                    <div class="svc-item rev-item">
+                        <span class="svc-num">01</span>
+                        <div class="svc-icon"><i class="fa-solid fa-code"></i></div>
+                        <div class="svc-content">
+                            <div class="svc-title">Web Development</div>
+                            <div class="svc-desc">Blazing-fast, custom-engineered websites built for performance, SEO,
+                                and conversion — not templates.</div>
+                        </div>
+                        <i class="fa-solid fa-arrow-right svc-arrow"></i>
+                    </div>
+                    <div class="svc-item rev-item">
+                        <span class="svc-num">02</span>
+                        <div class="svc-icon"><i class="fa-solid fa-mobile-screen"></i></div>
+                        <div class="svc-content">
+                            <div class="svc-title">App Development</div>
+                            <div class="svc-desc">Native-quality iOS & Android apps and cross-platform experiences that
+                                users keep coming back to.</div>
+                        </div>
+                        <i class="fa-solid fa-arrow-right svc-arrow"></i>
+                    </div>
+                    <div class="svc-item rev-item">
+                        <span class="svc-num">03</span>
+                        <div class="svc-icon"><i class="fa-solid fa-bag-shopping"></i></div>
+                        <div class="svc-content">
+                            <div class="svc-title">E-commerce Development</div>
+                            <div class="svc-desc">High-converting storefronts on Shopify, WooCommerce, or fully custom —
+                                optimized from browse to checkout.</div>
+                        </div>
+                        <i class="fa-solid fa-arrow-right svc-arrow"></i>
+                    </div>
+                    <div class="svc-item rev-item">
+                        <span class="svc-num">04</span>
+                        <div class="svc-icon"><i class="fa-solid fa-pen-nib"></i></div>
+                        <div class="svc-content">
+                            <div class="svc-title">UI/UX Design</div>
+                            <div class="svc-desc">Research-backed wireframes, design systems, and prototypes that reduce
+                                friction and guide users with precision.</div>
+                        </div>
+                        <i class="fa-solid fa-arrow-right svc-arrow"></i>
+                    </div>
+                    <div class="svc-item rev-item">
+                        <span class="svc-num">05</span>
+                        <div class="svc-icon"><i class="fa-solid fa-chart-line"></i></div>
+                        <div class="svc-content">
+                            <div class="svc-title">SEO & Performance</div>
+                            <div class="svc-desc">Technical SEO audits, Core Web Vitals optimization, and speed
+                                improvements that dominate search rankings.</div>
+                        </div>
+                        <i class="fa-solid fa-arrow-right svc-arrow"></i>
+                    </div>
+                    <div class="svc-item rev-item">
+                        <span class="svc-num">06</span>
+                        <div class="svc-icon"><i class="fa-solid fa-headset"></i></div>
+                        <div class="svc-content">
+                            <div class="svc-title">Ongoing Support</div>
+                            <div class="svc-desc">Dedicated Slack access, proactive monitoring, and continuous
+                                improvements long after launch day.</div>
+                        </div>
+                        <i class="fa-solid fa-arrow-right svc-arrow"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="glitch-rule"></div>
+
+    <!-- ══════════════ WHY ══════════════ -->
+    <section class="section" id="why">
+        <div class="inner">
+            <div class="why-header">
+                <h2 class="disp">WHY<br><span class="grad-text">CHOOSE</span><br>VERK?</h2>
+                <p>We don't sell hours — we sell outcomes. Every decision we make is measured against one metric: does
+                    it grow your business?</p>
+            </div>
+
+            <div class="why-bento">
+                <div class="bento-card b1 bento-stat-card rev-item">
+                    <div class="bento-big-num">3.8×</div>
+                    <div class="bento-big-label">Average client ROI within 6 months</div>
+                </div>
+                <div class="bento-card b2 rev-item">
+                    <div class="bento-icon"><i class="fa-solid fa-bolt"></i></div>
+                    <h3>Fast, Reliable Delivery</h3>
+                    <p>Structured sprints with clear milestones mean working deliverables in 2 weeks — not months of
+                        back-and-forth. We scope tightly, communicate constantly, and ship on time.</p>
+                    <ul class="bento-feature-list">
+                        <li>2-week first deliverable guarantee</li>
+                        <li>Weekly Loom walkthroughs</li>
+                        <li>Staging access from day one</li>
+                    </ul>
+                </div>
+                <div class="bento-card b3 bento-accent rev-item">
+                    <div class="bento-icon"><i class="fa-solid fa-arrow-trend-up"></i></div>
+                    <h3>Conversion-Focused</h3>
+                    <p>Every layout decision backed by UX data and A/B testing principles.</p>
+                </div>
+                <div class="bento-card b4 rev-item">
+                    <div class="bento-icon"><i class="fa-solid fa-layer-group"></i></div>
+                    <h3>Scalable Systems</h3>
+                    <p>Clean codebases and modular design systems built for your next 10× — not just today.</p>
+                </div>
+                <div class="bento-card b5 rev-item"
+                    style="background:linear-gradient(135deg,rgba(0,245,212,.06),var(--s2));border-color:rgba(0,245,212,.15);">
+                    <div class="bento-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h3>98% Retention</h3>
+                    <p>Most clients stay with us for 2+ years. We become your long-term digital partner — not a one-off
+                        vendor.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="glitch-rule"></div>
+
+    <!-- ══════════════ CASE STUDIES ══════════════ -->
+    <section class="section" id="cases">
+        <div class="inner">
+            <div class="cases-header">
+                <h2 class="disp">SELECTED<br><span class="grad-text">WORK</span></h2>
+                <a href="#cta" class="btn btn-ghost">Start Your Project <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <div class="cases-list">
+                <div class="case-item rev-item">
+                    <div class="case-num mono">01 /</div>
+                    <div class="case-info">
+                        <div class="case-tag-sm">E-commerce · Shopify</div>
+                        <div class="case-title">Lumière Fashion — Store Rebuild</div>
+                        <div class="case-desc">Rebuilt UX from scratch, cut checkout from 6 steps to 2, rewrote page
+                            speed from 7s to 0.9s load time.</div>
+                    </div>
+                    <div>
+                        <div class="case-result">+231%</div>
+                        <div class="case-result-label">Monthly Revenue</div>
+                    </div>
+                    <div class="case-view mono">View Case <i class="fa-solid fa-arrow-right"></i></div>
+                </div>
+                <div class="case-item rev-item">
+                    <div class="case-num mono">02 /</div>
+                    <div class="case-info">
+                        <div class="case-tag-sm">App Development · iOS & Android</div>
+                        <div class="case-title">Kinetic Fitness — Retention Overhaul</div>
+                        <div class="case-desc">Redesigned onboarding, push strategy, and gamification loop. Day-7
+                            retention jumped from 22% to 68%.</div>
+                    </div>
+                    <div>
+                        <div class="case-result">+180%</div>
+                        <div class="case-result-label">Daily Active Users</div>
+                    </div>
+                    <div class="case-view mono">View Case <i class="fa-solid fa-arrow-right"></i></div>
+                </div>
+                <div class="case-item rev-item">
+                    <div class="case-num mono">03 /</div>
+                    <div class="case-info">
+                        <div class="case-tag-sm">Web Development · SaaS</div>
+                        <div class="case-title">Vantage SaaS — Landing Page Rebuild</div>
+                        <div class="case-desc">New messaging hierarchy, social proof system, and live demo CTA tripled
+                            qualified inbound leads in 60 days.</div>
+                    </div>
+                    <div>
+                        <div class="case-result">+310%</div>
+                        <div class="case-result-label">Inbound Leads</div>
+                    </div>
+                    <div class="case-view mono">View Case <i class="fa-solid fa-arrow-right"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="glitch-rule"></div>
+
+    <!-- ══════════════ TESTIMONIALS ══════════════ -->
+    <section class="section" id="testimonials">
+        <div class="inner">
+            <div class="testi-layout">
+                <div class="testi-left rev-item">
+                    <div class="tag">Testimonials</div>
+                    <h2 class="disp">WHAT CLIENTS<br><span class="grad-text">ACTUALLY</span><br>SAY</h2>
+                    <p>Real feedback from the founders, CTOs, and heads of growth we've worked with — not cherry-picked
+                        fluff.</p>
+                    <div class="testi-rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="testi-rating-num mono">4.9 / 5.0</span>
+                    </div>
+                    <div class="testi-rating-label mono" style="font-size:11px;color:var(--dim2)">Based on 100+ verified
+                        reviews</div>
+                    <div style="margin-top:28px;">
+                        <a href="#cta" class="btn btn-ghost">Work With Us <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="testi-cards">
+                    <div class="testi-card rev-item">
+                        <div class="stars" style="font-size:12px;margin-bottom:14px;">★★★★★</div>
+                        <p class="testi-text">"Verk didn't build us a website — they built us a sales engine. Inbound
+                            leads tripled in 60 days. The team genuinely understood our business goals, not just the
+                            brief."</p>
+                        <div class="testi-author">
+                            <div class="testi-av av-a">AK</div>
+                            <div>
+                                <div class="testi-name">Alex Kim</div>
+                                <div class="testi-role">Founder, Vantage SaaS</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testi-card rev-item">
+                        <div class="stars" style="font-size:12px;margin-bottom:14px;">★★★★★</div>
+                        <p class="testi-text">"The redesign led to +231% monthly revenue. Smooth process, zero
+                            surprises, on-time delivery. First agency I've worked with where the outcome matched the
+                            promise."</p>
+                        <div class="testi-author">
+                            <div class="testi-av av-b">SR</div>
+                            <div>
+                                <div class="testi-name">Sofia Reyes</div>
+                                <div class="testi-role">CEO, Lumière Fashion</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testi-card rev-item">
+                        <div class="stars" style="font-size:12px;margin-bottom:14px;">★★★★★</div>
+                        <p class="testi-text">"I've worked with four agencies. None of them took the time to understand
+                            user behavior like Verk does. The app metrics post-launch speak for themselves."</p>
+                        <div class="testi-author">
+                            <div class="testi-av av-c">MP</div>
+                            <div>
+                                <div class="testi-name">Marcus Powell</div>
+                                <div class="testi-role">CTO, Kinetic Fitness</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testi-card rev-item">
+                        <div class="stars" style="font-size:12px;margin-bottom:14px;">★★★★★</div>
+                        <p class="testi-text">"Fast, detail-obsessed, and honest. Our site loads in under a second and
+                            bounce rate dropped 40%. I recommend Verk to every founder who asks me about web
+                            development."</p>
+                        <div class="testi-author">
+                            <div class="testi-av av-d">JL</div>
+                            <div>
+                                <div class="testi-name">Jasmine Liu</div>
+                                <div class="testi-role">Head of Growth, Orion Analytics</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="glitch-rule"></div>
+
+    <!-- ══════════════ PRICING ══════════════ -->
+    <section class="section" id="pricing">
+        <div class="inner">
+            <div class="pricing-header">
+                <div class="tag">Pricing</div>
+                <h2 class="disp">TRANSPARENT<br><span class="grad-text">PRICING</span></h2>
+                <p>No surprise invoices. No hidden retainers. Pick a plan that fits where you are today — upgrade
+                    anytime.</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="p-card rev-item">
+                    <div class="p-tier">Starter</div>
+                    <div class="p-price"><sup>$</sup>2,499</div>
+                    <div class="p-period mono">per project</div>
+                    <p class="p-desc">For early-stage startups and small businesses needing a polished presence fast.
+                    </p>
+                    <div class="p-rule"></div>
+                    <ul class="p-features">
+                        <li><i class="fa-solid fa-check"></i> Up to 5-page website</li>
+                        <li><i class="fa-solid fa-check"></i> Mobile responsive design</li>
+                        <li><i class="fa-solid fa-check"></i> Basic SEO setup</li>
+                        <li><i class="fa-solid fa-check"></i> Contact form integration</li>
+                        <li><i class="fa-solid fa-check"></i> 30-day support</li>
+                        <li class="off"><i class="fa-solid fa-xmark"></i> Custom animations</li>
+                        <li class="off"><i class="fa-solid fa-xmark"></i> E-commerce integration</li>
+                    </ul>
+                    <a href="#cta" class="btn btn-ghost" style="width:100%;justify-content:center;">Get Started</a>
+                </div>
+
+                <div class="p-card hot rev-item">
+                    <div class="p-badge">Most Popular</div>
+                    <div class="p-tier" style="color:var(--cyan)">Growth</div>
+                    <div class="p-price grad-text"><sup>$</sup>5,999</div>
+                    <div class="p-period mono">per project</div>
+                    <p class="p-desc">For growth-stage companies that need a high-performing, conversion-optimized
+                        digital product.</p>
+                    <div class="p-rule"></div>
+                    <ul class="p-features">
+                        <li><i class="fa-solid fa-check"></i> Up to 15 pages / screens</li>
+                        <li><i class="fa-solid fa-check"></i> Custom UI/UX design system</li>
+                        <li><i class="fa-solid fa-check"></i> GSAP + micro-animations</li>
+                        <li><i class="fa-solid fa-check"></i> Full SEO + performance audit</li>
+                        <li><i class="fa-solid fa-check"></i> CMS integration</li>
+                        <li><i class="fa-solid fa-check"></i> Analytics + conversion setup</li>
+                        <li><i class="fa-solid fa-check"></i> 90-day priority support</li>
+                    </ul>
+                    <a href="#cta" class="btn btn-cyan" style="width:100%;justify-content:center;">Book Free Call</a>
+                </div>
+
+                <div class="p-card rev-item">
+                    <div class="p-tier">Premium</div>
+                    <div class="p-price"><sup>$</sup>12,999</div>
+                    <div class="p-period mono">per project</div>
+                    <p class="p-desc">Full-scale digital products for established businesses — apps, platforms, and
+                        complex web apps.</p>
+                    <div class="p-rule"></div>
+                    <ul class="p-features">
+                        <li><i class="fa-solid fa-check"></i> Everything in Growth</li>
+                        <li><i class="fa-solid fa-check"></i> Mobile app (iOS + Android)</li>
+                        <li><i class="fa-solid fa-check"></i> E-commerce / custom backend</li>
+                        <li><i class="fa-solid fa-check"></i> Full brand & design system</li>
+                        <li><i class="fa-solid fa-check"></i> A/B testing framework</li>
+                        <li><i class="fa-solid fa-check"></i> Dedicated project manager</li>
+                        <li><i class="fa-solid fa-check"></i> 6-month support retainer</li>
+                    </ul>
+                    <a href="#cta" class="btn btn-ghost" style="width:100%;justify-content:center;">Book Free Call</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="glitch-rule"></div>
+
+    <!-- ══════════════ PROCESS ══════════════ -->
+    <section class="section" id="process">
+        <div class="inner">
+            <div class="process-header">
+                <div class="tag">Our Process</div>
+                <h2 class="disp">HOW WE <span class="grad-text">WORK</span></h2>
+                <p>A proven, repeatable system that removes guesswork and keeps every project on time, on budget, and on
+                    brief.</p>
+            </div>
+            <div class="process-flow">
+                <div class="p-step rev-item">
+                    <div class="p-step-num"><i class="fa-solid fa-magnifying-glass p-step-icon"></i></div>
+                    <div class="p-step-title">Discovery</div>
+                    <div class="p-step-desc">Deep-dive into your goals, users, and competitors. We align before we
+                        design.</div>
+                </div>
+                <div class="p-step rev-item">
+                    <div class="p-step-num"><i class="fa-solid fa-compass-drafting p-step-icon"></i></div>
+                    <div class="p-step-title">Strategy</div>
+                    <div class="p-step-desc">Sitemap, user flows, tech stack, and a conversion blueprint — before a
+                        pixel is drawn.</div>
+                </div>
+                <div class="p-step rev-item">
+                    <div class="p-step-num"><i class="fa-solid fa-pen-ruler p-step-icon"></i></div>
+                    <div class="p-step-title">Design</div>
+                    <div class="p-step-desc">Wireframes → high-fidelity mockups → interactive prototypes. Reviewed by
+                        you at every step.</div>
+                </div>
+                <div class="p-step rev-item">
+                    <div class="p-step-num"><i class="fa-solid fa-laptop-code p-step-icon"></i></div>
+                    <div class="p-step-title">Build</div>
+                    <div class="p-step-desc">Clean, documented code with weekly deliverables. Staging access so you see
+                        progress in real time.</div>
+                </div>
+                <div class="p-step rev-item">
+                    <div class="p-step-num"><i class="fa-solid fa-rocket p-step-icon"></i></div>
+                    <div class="p-step-title">Launch</div>
+                    <div class="p-step-desc">Performance QA, SEO checklist, analytics setup. Post-launch monitoring for
+                        30 days minimum.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="glitch-rule"></div>
+
+    <!-- ══════════════ FAQ ══════════════ -->
+    <section class="section" id="faq">
+        <div class="inner">
+            <div class="faq-layout">
+                <div class="faq-left rev-item">
+                    <div class="tag">FAQ</div>
+                    <h2 class="disp">GOT<br><span class="grad-text">QUESTIONS</span>?</h2>
+                    <p>Answers to the questions we get on every strategy call. Still unsure? Let's talk.</p>
+                    <a href="#cta" class="btn btn-cyan">Book Free Call <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <div class="faq-items" id="faqItems">
+                    <div class="faq-item">
+                        <button class="faq-q">How long does a typical project take?<div class="faq-icon"><i
+                                    class="fa-solid fa-plus"></i></div></button>
+                        <div class="faq-a">
+                            <div class="faq-a-inner">Most projects fall into a 2–8 week timeline. A 5-page marketing
+                                site typically takes 2–3 weeks. A full e-commerce build or mobile app is usually 6–10
+                                weeks. We give you a precise timeline after the discovery call — and we stick to it.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-q">What's included in the free strategy call?<div class="faq-icon"><i
+                                    class="fa-solid fa-plus"></i></div></button>
+                        <div class="faq-a">
+                            <div class="faq-a-inner">It's a 30-minute video call. We learn about your business, goals,
+                                and current challenges. We'll give you honest feedback on what's working and what isn't
+                                — zero sales pressure. You'll leave with actionable insights regardless of whether we
+                                work together.</div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-q">Do you work with startups or established businesses?<div class="faq-icon">
+                                <i class="fa-solid fa-plus"></i>
+                            </div></button>
+                        <div class="faq-a">
+                            <div class="faq-a-inner">Both. Our Starter plan is for early-stage founders moving fast.
+                                Premium is for established businesses overhauling complex systems. What matters is that
+                                you're serious about growth — not how big your company is.</div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-q">Can I update the website myself after launch?<div class="faq-icon"><i
+                                    class="fa-solid fa-plus"></i></div></button>
+                        <div class="faq-a">
+                            <div class="faq-a-inner">Absolutely. We integrate CMS platforms so you can update content,
+                                add pages, and manage products without touching code. We also provide a walkthrough
+                                video and documentation so your team is fully self-sufficient from day one.</div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-q">What if I'm not happy with the designs?<div class="faq-icon"><i
+                                    class="fa-solid fa-plus"></i></div></button>
+                        <div class="faq-a">
+                            <div class="faq-a-inner">Every design stage requires your sign-off before we proceed.
+                                Revision rounds are built into every plan. We've never had a project reach completion
+                                without the client being genuinely satisfied — and there's a process reason for that.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-q">Do you offer ongoing support after the project ends?<div class="faq-icon">
+                                <i class="fa-solid fa-plus"></i>
+                            </div></button>
+                        <div class="faq-a">
+                            <div class="faq-a-inner">Yes. Every plan includes a post-launch support window. After that,
+                                we offer monthly retainers for proactive maintenance, performance monitoring, SEO
+                                improvements, and feature additions. Many clients have been with us for 2+ years.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="glitch-rule"></div>
+
+    <!-- ══════════════ FINAL CTA ══════════════ -->
+    <section class="section" id="cta">
+        <div class="inner">
+            <div class="cta-inner rev-item">
+                <div class="cta-label">// Free Strategy Call — No Commitment</div>
+                <h2 class="cta-h2 disp">READY TO<br><span class="grad-text">SHIP</span><br>SOMETHING<br>GREAT?</h2>
+                <p class="cta-sub">Book a free 30-minute call. We'll audit your digital presence, map out exactly what's
+                    needed, and give you a clear plan — whether you work with us or not.</p>
+                <a href="mailto:hello@verk.studio" class="btn btn-cyan" style="font-size:13px;padding:16px 40px;">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    Book Your Free Call Now
+                </a>
+                <div class="cta-trust">
+                    <div class="cta-trust-item"><i class="fa-solid fa-check"></i> No commitment required</div>
+                    <div class="cta-trust-item"><i class="fa-solid fa-check"></i> Actionable insights guaranteed</div>
+                    <div class="cta-trust-item"><i class="fa-solid fa-check"></i> 30 minutes, no fluff</div>
+                    <div class="cta-trust-item"><i class="fa-solid fa-check"></i> Response within 24 hours</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════ FOOTER ══════════════ -->
+    <footer>
+        <div class="footer-top">
+            <div class="f-brand">
+                <a href="#" class="nav-logo f-logo"
+                    style="font-family:var(--display);font-size:28px;color:var(--white);text-decoration:none;display:block;margin-bottom:14px;">VERK<span
+                        style="color:var(--cyan)">.</span></a>
+                <p>Partnering with ambitious brands to build digital products that drive measurable growth.
+                    Remote-first, worldwide.</p>
+                <div class="f-socials">
+                    <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Dribbble"><i class="fa-brands fa-dribbble"></i></a>
+                    <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="f-col">
+                <h5>Services</h5>
+                <ul>
+                    <li><a href="#services">Web Development</a></li>
+                    <li><a href="#services">App Development</a></li>
+                    <li><a href="#services">E-commerce</a></li>
+                    <li><a href="#services">UI/UX Design</a></li>
+                    <li><a href="#services">SEO & Performance</a></li>
+                </ul>
+            </div>
+            <div class="f-col">
+                <h5>Company</h5>
+                <ul>
+                    <li><a href="#why">About Us</a></li>
+                    <li><a href="#cases">Case Studies</a></li>
+                    <li><a href="#process">Process</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#cta">Contact</a></li>
+                </ul>
+            </div>
+            <div class="f-col">
+                <h5>Contact</h5>
+                <ul>
+                    <li><a href="mailto:hello@verk.studio">hello@verk.studio</a></li>
+                    <li><a href="tel:+15551234567">+1 (555) 123-4567</a></li>
+                    <li><a href="#">Remote · Worldwide</a></li>
+                    <li><a href="#">Book a Free Call</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 VERK Studio. All rights reserved.</p>
+            <p><a href="#" style="color:var(--dim2);text-decoration:none;margin-right:20px;">Privacy Policy</a><a
+                    href="#" style="color:var(--dim2);text-decoration:none;">Terms</a></p>
+        </div>
+    </footer>
+
+    <!-- ══════════════ JAVASCRIPT ══════════════ ══════════════ -->
+    <script>
+        /* ── Custom Cursor ── */
+        const cur = document.getElementById('cursor');
+        const ring = document.getElementById('cursor-ring');
+        if (cur) {
+            let mx = 0, my = 0, rx = 0, ry = 0;
+            document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+            function animCursor() {
+                cur.style.left = mx + 'px'; cur.style.top = my + 'px';
+                rx += (mx - rx) * 0.12; ry += (my - ry) * 0.12;
+                ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
+                requestAnimationFrame(animCursor);
+            }
+            animCursor();
+        }
+
+        /* ── Navbar scroll ── */
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', scrollY > 30); });
+
+        /* ── Mobile menu ── */
+        const hbg = document.getElementById('hamburger');
+        const mob = document.getElementById('mobileMenu');
+        hbg.addEventListener('click', () => {
+            mob.classList.toggle('open');
+            document.body.style.overflow = mob.classList.contains('open') ? 'hidden' : '';
+        });
+        document.querySelectorAll('.ml').forEach(l => l.addEventListener('click', () => {
+            mob.classList.remove('open'); document.body.style.overflow = '';
+        }));
+
+        /* ── FAQ ── */
+        document.querySelectorAll('.faq-q').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.closest('.faq-item');
+                const wasOpen = item.classList.contains('open');
+                document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+                if (!wasOpen) item.classList.add('open');
+            });
+        });
+
+        /* ── GSAP ── */
+        gsap.registerPlugin(ScrollTrigger);
+
+        /* Hero entrance */
+        const tl = gsap.timeline({ defaults: { ease: 'power3.out' }, delay: 0.05 });
+        tl.from('.hero-eyebrow', { opacity: 0, x: -30, duration: 0.7 })
+            .from('.hero-h1 .disp, .hero-h1', {
+                opacity: 0, y: 60, duration: 1, stagger: 0.1
+            }, '-=0.4')
+            .from('.hero-sub', { opacity: 0, y: 30, duration: 0.7 }, '-=0.6')
+            .from('.hero-ctas', { opacity: 0, y: 24, duration: 0.6 }, '-=0.5')
+            .from('.hero-proof', { opacity: 0, y: 20, duration: 0.6 }, '-=0.4')
+            .from('#heroTerminal', { opacity: 0, x: 50, duration: 0.8 }, '-=0.8');
+
+        /* Terminal float */
+        gsap.to('#heroTerminal', { y: -14, duration: 4, repeat: -1, yoyo: true, ease: 'sine.inOut', delay: 1.5 });
+
+        /* Scroll-triggered: stagger children of lists */
+        function staggerReveal(selector, stagger = 0.1) {
+            const items = document.querySelectorAll(selector);
+            if (!items.length) return;
+            gsap.from(items, {
+                scrollTrigger: { trigger: items[0].closest('section') || items[0].parentElement, start: 'top 80%' },
+                opacity: 0, y: 36, duration: 0.65, stagger, ease: 'power3.out', clearProps: 'all'
+            });
+        }
+
+        staggerReveal('.svc-item', 0.08);
+        staggerReveal('.bento-card', 0.1);
+        staggerReveal('.case-item', 0.1);
+        staggerReveal('.testi-card', 0.1);
+        staggerReveal('.p-card', 0.12);
+        staggerReveal('.p-step', 0.1);
+
+        /* Generic rev-item (for single elements not in stagger groups) */
+        document.querySelectorAll('.rev-item').forEach(el => {
+            // skip if already in a stagger group
+            const inGroup = el.closest('.svc-item, .bento-card, .case-item, .testi-card, .p-card, .p-step');
+            if (inGroup) return;
+            gsap.from(el, {
+                scrollTrigger: { trigger: el, start: 'top 85%' },
+                opacity: 0, y: 40, duration: 0.7, ease: 'power3.out', clearProps: 'all'
+            });
+        });
+
+        /* Counter animation for proof numbers */
+        function animateCount(el, target, suffix = '') {
+            const isFloat = String(target).includes('.');
+            gsap.from({ val: 0 }, {
+                val: parseFloat(target),
+                duration: 1.8, ease: 'power2.out', delay: 0.3,
+                onUpdate: function () {
+                    el.textContent = (isFloat ? this.targets()[0].val.toFixed(1) : Math.floor(this.targets()[0].val)) + suffix;
+                },
+                scrollTrigger: { trigger: el, start: 'top 85%', once: true }
+            });
+        }
+        document.querySelectorAll('.bento-big-num').forEach(el => {
+            const raw = el.textContent.trim(); // e.g. "3.8×"
+            const num = parseFloat(raw);
+            const suf = raw.replace(/[\d.]/g, '');
+            if (!isNaN(num)) animateCount(el, num, suf);
+        });
+    </script>
+</body>
+
+</html>

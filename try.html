@@ -1,0 +1,58 @@
+
+        <div class="hero-ticker">
+            <div class="ticker-inner" id="tickerInner">
+                <span>Web Development</span>
+                <span>App Development</span>
+                <span>UI/UX Design</span>
+                <span>E-Commerce</span>
+                <span>SEO & Performance</span>
+                <span>Conversion Optimization</span>
+                <span>Web Development</span>
+                <span>App Development</span>
+                <span>UI/UX Design</span>
+                <span>E-Commerce</span>
+                <span>SEO & Performance</span>
+                <span>Conversion Optimization</span>
+            </div>
+        </div>
+
+
+        /* Marquee ticker at top */
+.hero-ticker {
+    position: absolute;
+    top: var(--nav-h);
+    left: 0;
+    right: 0;
+    height: 36px;
+    background: rgba(0, 245, 212, .05);
+    border-bottom: 1px solid rgba(0, 245, 212, .15);
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.ticker-inner {
+    display: flex;
+    gap: 48px;
+    white-space: nowrap;
+    animation: ticker 20s linear infinite;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: rgba(0, 245, 212, .6);
+}
+
+.ticker-inner span::before {
+    content: '◆ ';
+}
+
+@keyframes ticker {
+    from {
+        transform: translateX(0)
+    }
+
+    to {
+        transform: translateX(-50%)
+    }
+}
