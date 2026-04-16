@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>VORTEX — Services</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --black:#050507;
+  --surface:#0c0c10;
+  --s2:#111116;
+  --s3:#18181f;
+  --border:rgba(255,255,255,0.06);
+  --border2:rgba(255,255,255,0.11);
+  --white:#f0f0f8;
+  --dim:rgba(240,240,248,0.45);
+  --dim2:rgba(240,240,248,0.25);
+  --cyan:#00f5d4;
+  --purple:#b44bff;
+  --amber:#ffb800;
+  --red:#ff4d6d;
+  --mono:'IBM Plex Mono',monospace;
+  --display:'Bebas Neue',sans-serif;
+  --body:'Outfit',sans-serif;
+  --pad:clamp(24px,6vw,80px);
+  --r:4px;
+  --r2:12px;
+  --r3:20px;
+}
+
+html{scroll-behavior:smooth}
+body{
+  background:var(--black);
+  color:var(--white);
+  font-family:var(--body);
+  overflow-x:hidden;
+  cursor:none;
+}
+
+/* ── CURSOR ── */
+.cursor{
+  width:10px;height:10px;
+  background:var(--cyan);
+  border-radius:50%;
+  position:fixed;top:0;left:0;
+  pointer-events:none;
+  z-index:9999;
+  transform:translate(-50%,-50%);
+  mix-blend-mode:screen;
+  transition:width .3s,height .3s,background .2s;
+}
+.cursor-ring{
+  width:34px;height:34px;
+  border:1px solid rgba(0,245,212,.35);
+  border-radius:50%;
+  position:fixed;top:0;left:0;
+  pointer-events:none;
+  z-index:9998;
+  transform:translate(-50%,-50%);
+  transition:width .3s,height .3s,border-color .2s;
+}
+.cursor.big{width:18px;height:18px;background:var(--purple)}
+.cursor-ring.big{width:50px;height:50px;border-color:rgba(180,75,255,.4)}
+
+/* ── SECTION WRAPPER ── */
+.services-section{
+  position:relative;
+  padding:clamp(80px,12vh,140px) var(--pad) clamp(80px,10vh,120px);
+  overflow:hidden;
+}
+
+/* ── BACKGROUND TEXTURE ── */
+.sec-grid{
+  position:absolute;inset:0;
+  background-image:
+    linear-gradient(var(--border) 1px,transparent 1px),
+    linear-gradient(90deg,var(--border) 1px,transparent 1px);
+  background-size:60px 60px;
+  mask-image:radial-gradient(ellipse 100% 80% at 50% 50%,black 20%,transparent 85%);
+  pointer-events:none;
+}
+.sec-orb{
+  position:absolute;
+  border-radius:50%;
+  filter:blur(110px);
+  pointer-events:none;
+}
+.sec-orb-1{
+  width:600px;height:400px;
+  background:radial-gradient(circle,rgba(0,245,212,.07) 0%,transparent 70%);
+  top:-100px;left:-100px;
+}
+.sec-orb-2{
+  width:500px;height:500px;
+  background:radial-gradient(circle,rgba(180,75,255,.08) 0%,transparent 70%);
+  bottom:-80px;right:-80px;
+}
+
+/* ── SECTION HEADER ── */
+.sec-header{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  align-items:end;
+  margin-bottom:clamp(50px,8vh,80px);
+  position:relative;z-index:2;
+}
+.sec-eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--mono);
+  font-size:11px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--cyan);
+  background:rgba(0,245,212,.07);
+  border:1px solid rgba(0,245,212,.2);
+  padding:7px 14px;
+  border-radius:100px;
+  margin-bottom:20px;
+}
+.eyebrow-blink{
+  width:6px;height:6px;
+  border-radius:50%;
+  background:var(--cyan);
+  box-shadow:0 0 8px var(--cyan);
+  animation:blink 1.6s step-end infinite;
+}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+
+.sec-title{
+  font-family:var(--display);
+  font-size:clamp(52px,6vw,90px);
+  line-height:.9;
+  letter-spacing:.02em;
+  text-transform:uppercase;
+}
+.st-normal{color:var(--white)}
+.st-outline{
+  -webkit-text-stroke:1.5px rgba(255,255,255,.22);
+  color:transparent;
+}
+.st-accent{
+  background:linear-gradient(90deg,var(--cyan),var(--purple));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+
+.sec-right{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  justify-content:flex-end;
+  gap:20px;
+}
+.sec-desc{
+  font-size:clamp(14px,1.4vw,17px);
+  color:var(--dim);
+  line-height:1.75;
+  max-width:380px;
+  text-align:right;
+  font-weight:300;
+}
+.sec-desc strong{color:var(--white);font-weight:500}
+.sec-cta{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--mono);
+  font-size:12px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--cyan);
+  text-decoration:none;
+  border:1px solid rgba(0,245,212,.25);
+  padding:10px 20px;
+  border-radius:var(--r);
+  transition:all .3s;
+  cursor:none;
+}
+.sec-cta:hover{
+  background:rgba(0,245,212,.08);
+  border-color:rgba(0,245,212,.5);
+  box-shadow:0 0 20px rgba(0,245,212,.15);
+}
+.sec-cta svg{transition:transform .3s}
+.sec-cta:hover svg{transform:translateX(4px)}
+
+/* ── SERVICE COUNTER ── */
+.service-count{
+  font-family:var(--mono);
+  font-size:11px;
+  letter-spacing:.12em;
+  color:var(--dim2);
+  text-transform:uppercase;
+  display:flex;align-items:center;gap:10px;
+}
+.sc-line{
+  flex:1;height:1px;
+  background:linear-gradient(90deg,rgba(0,245,212,.3),transparent);
+}
+
+/* ── MAIN GRID ── */
+.services-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  grid-template-rows:auto auto;
+  gap:1px;
+  position:relative;z-index:2;
+  background:var(--border);
+  border:1px solid var(--border);
+  border-radius:var(--r3);
+  overflow:hidden;
+}
+
+/* ── SERVICE CARD ── */
+.svc-card{
+  position:relative;
+  background:var(--surface);
+  padding:clamp(28px,3vw,44px);
+  overflow:hidden;
+  cursor:none;
+  transition:background .4s;
+  display:flex;
+  flex-direction:column;
+  gap:0;
+}
+.svc-card::before{
+  content:'';
+  position:absolute;inset:0;
+  background:radial-gradient(circle at var(--mx,50%) var(--my,50%), var(--glow-color,rgba(0,245,212,.08)) 0%,transparent 60%);
+  opacity:0;
+  transition:opacity .4s;
+  pointer-events:none;
+}
+.svc-card:hover::before{opacity:1}
+.svc-card:hover{background:var(--s2)}
+
+/* Accent top line per card */
+.svc-card::after{
+  content:'';
+  position:absolute;
+  top:0;left:0;right:0;
+  height:2px;
+  background:var(--card-accent,var(--cyan));
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform .5s cubic-bezier(.4,0,.2,1);
+}
+.svc-card:hover::after{transform:scaleX(1)}
+
+/* Featured / wide card */
+.svc-card.featured{
+  grid-column:span 2;
+}
+.svc-card.tall{
+  grid-row:span 2;
+}
+
+/* ── CARD NUMBER ── */
+.card-num{
+  font-family:var(--mono);
+  font-size:11px;
+  letter-spacing:.15em;
+  color:var(--dim2);
+  margin-bottom:28px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.card-num-val{}
+.card-tag{
+  font-size:10px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  padding:4px 10px;
+  border-radius:100px;
+  border:1px solid;
+  transition:all .3s;
+}
+
+/* ── CARD ICON ── */
+.card-icon-wrap{
+  width:56px;height:56px;
+  border-radius:var(--r2);
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:22px;
+  position:relative;
+  flex-shrink:0;
+  transition:transform .4s cubic-bezier(.4,0,.2,1),box-shadow .4s;
+}
+.svc-card:hover .card-icon-wrap{
+  transform:scale(1.08) rotate(-3deg);
+}
+.card-icon-wrap svg{position:relative;z-index:1}
+
+/* ── CARD CONTENT ── */
+.card-title{
+  font-family:var(--display);
+  font-size:clamp(26px,2.5vw,36px);
+  letter-spacing:.02em;
+  text-transform:uppercase;
+  color:var(--white);
+  line-height:.95;
+  margin-bottom:14px;
+  transition:color .3s;
+}
+.card-desc{
+  font-size:14px;
+  color:var(--dim);
+  line-height:1.7;
+  font-weight:300;
+  margin-bottom:auto;
+  flex-grow:1;
+}
+
+/* ── TECH PILLS ── */
+.tech-pills{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:24px;
+}
+.pill{
+  font-family:var(--mono);
+  font-size:10px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  padding:5px 12px;
+  border-radius:100px;
+  border:1px solid var(--border2);
+  color:var(--dim2);
+  background:rgba(255,255,255,.03);
+  transition:all .3s;
+}
+.svc-card:hover .pill{
+  border-color:var(--card-accent,var(--cyan));
+  color:var(--white);
+  background:rgba(255,255,255,.05);
+}
+
+/* ── CARD ARROW ── */
+.card-arrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--mono);
+  font-size:11px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--dim2);
+  margin-top:24px;
+  text-decoration:none;
+  transition:color .3s,gap .3s;
+  cursor:none;
+  width:fit-content;
+}
+.card-arrow svg{
+  transition:transform .3s;
+  flex-shrink:0;
+}
+.svc-card:hover .card-arrow{
+  color:var(--card-accent,var(--cyan));
+  gap:14px;
+}
+.svc-card:hover .card-arrow svg{transform:translateX(4px)}
+
+/* ── FEATURED CARD LAYOUT ── */
+.featured .card-inner-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  height:100%;
+}
+.featured .card-metrics{
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  gap:16px;
+}
+.metric-row{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+.metric-label{
+  font-family:var(--mono);
+  font-size:10px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--dim2);
+}
+.metric-bar-wrap{
+  height:4px;
+  background:rgba(255,255,255,.07);
+  border-radius:2px;
+  overflow:hidden;
+}
+.metric-bar{
+  height:100%;
+  border-radius:2px;
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform 1.2s cubic-bezier(.4,0,.2,1);
+}
+.metric-bar.animated{transform:scaleX(1)}
+.metric-val{
+  font-family:var(--display);
+  font-size:22px;
+  color:var(--white);
+  line-height:1;
+}
+.metric-val em{
+  font-style:normal;
+  font-size:14px;
+  margin-left:2px;
+}
+
+/* ── TALL CARD VISUAL ── */
+.tall-visual{
+  margin-top:28px;
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  gap:10px;
+}
+.bar-chart{
+  display:flex;align-items:flex-end;gap:6px;
+  height:80px;
+}
+.bar-col{
+  flex:1;
+  border-radius:3px 3px 0 0;
+  background:linear-gradient(180deg,var(--cyan),rgba(0,245,212,.3));
+  transform:scaleY(0);
+  transform-origin:bottom;
+  transition:transform 1s cubic-bezier(.4,0,.2,1);
+  opacity:.7;
+}
+.bar-col.animated{transform:scaleY(1)}
+.bar-col:nth-child(2){background:linear-gradient(180deg,var(--purple),rgba(180,75,255,.3));animation-delay:.1s}
+.bar-col:nth-child(3){animation-delay:.2s}
+.bar-col:nth-child(4){background:linear-gradient(180deg,var(--amber),rgba(255,184,0,.3));animation-delay:.3s}
+.bar-col:nth-child(5){animation-delay:.4s}
+.bar-labels{
+  display:flex;gap:6px;
+}
+.bar-lbl{
+  flex:1;
+  font-family:var(--mono);
+  font-size:9px;
+  color:var(--dim2);
+  text-align:center;
+  letter-spacing:.05em;
+}
+
+/* ── PROCESS TAG ── */
+.process-steps{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  margin-top:24px;
+}
+.ps-item{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:10px 14px;
+  background:rgba(255,255,255,.03);
+  border:1px solid var(--border);
+  border-radius:var(--r2);
+  transition:all .3s;
+}
+.svc-card:hover .ps-item{
+  border-color:var(--border2);
+  background:rgba(255,255,255,.05);
+}
+.ps-num{
+  font-family:var(--mono);
+  font-size:10px;
+  color:var(--dim2);
+  width:20px;
+  flex-shrink:0;
+}
+.ps-text{
+  font-size:13px;
+  color:var(--dim);
+  font-weight:400;
+}
+.ps-dot{
+  width:6px;height:6px;
+  border-radius:50%;
+  margin-left:auto;
+  flex-shrink:0;
+}
+
+/* ── SEPARATOR BOTTOM ── */
+.services-bottom{
+  margin-top:clamp(40px,6vh,70px);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  position:relative;z-index:2;
+  flex-wrap:wrap;
+}
+.sb-text{
+  font-size:14px;
+  color:var(--dim2);
+  font-family:var(--mono);
+  letter-spacing:.08em;
+}
+.sb-text strong{color:var(--cyan);font-weight:500}
+.trust-badges{
+  display:flex;align-items:center;gap:16px;
+  flex-wrap:wrap;
+}
+.trust-badge{
+  display:flex;align-items:center;gap:8px;
+  font-family:var(--mono);
+  font-size:11px;
+  letter-spacing:.1em;
+  color:var(--dim2);
+  text-transform:uppercase;
+  padding:8px 16px;
+  border:1px solid var(--border2);
+  border-radius:100px;
+  background:rgba(255,255,255,.02);
+  transition:all .3s;
+  cursor:none;
+}
+.trust-badge:hover{
+  color:var(--white);
+  border-color:rgba(255,255,255,.2);
+  background:rgba(255,255,255,.04);
+}
+.tb-icon{
+  width:16px;height:16px;
+  display:flex;align-items:center;justify-content:center;
+}
+
+/* ── SCROLL REVEAL ── */
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition:opacity .8s cubic-bezier(.16,1,.3,1),
+             transform .8s cubic-bezier(.16,1,.3,1);
+}
+.reveal.visible{
+  opacity:1;
+  transform:translateY(0);
+}
+.reveal-delay-1{transition-delay:.1s}
+.reveal-delay-2{transition-delay:.2s}
+.reveal-delay-3{transition-delay:.3s}
+.reveal-delay-4{transition-delay:.4s}
+.reveal-delay-5{transition-delay:.5s}
+.reveal-delay-6{transition-delay:.6s}
+
+/* ── ACTIVE SERVICE INDICATOR ── */
+.active-indicator{
+  display:flex;
+  align-items:center;
+  gap:24px;
+  margin-bottom:40px;
+  position:relative;z-index:2;
+  overflow-x:auto;
+  scrollbar-width:none;
+}
+.active-indicator::-webkit-scrollbar{display:none}
+.ai-item{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-family:var(--mono);
+  font-size:11px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--dim2);
+  white-space:nowrap;
+  cursor:none;
+  padding:6px 0;
+  border-bottom:1px solid transparent;
+  transition:all .3s;
+}
+.ai-item.active{
+  color:var(--white);
+  border-bottom-color:var(--cyan);
+}
+.ai-item:hover{color:var(--white)}
+.ai-dot{
+  width:5px;height:5px;
+  border-radius:50%;
+  flex-shrink:0;
+  opacity:.5;
+}
+.ai-item.active .ai-dot{opacity:1;box-shadow:0 0 6px currentColor}
+
+/* ── NOISE ── */
+.noise{
+  position:absolute;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  opacity:.3;
+  pointer-events:none;
+  mix-blend-mode:overlay;
+}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1100px){
+  .services-grid{grid-template-columns:repeat(2,1fr)}
+  .svc-card.featured{grid-column:span 2}
+  .svc-card.tall{grid-row:auto}
+  .sec-header{grid-template-columns:1fr}
+  .sec-right{align-items:flex-start}
+  .sec-desc{text-align:left}
+}
+@media(max-width:700px){
+  .services-grid{grid-template-columns:1fr}
+  .svc-card.featured{grid-column:span 1}
+  .featured .card-inner-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- Cursor -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="ring"></div>
+
+<section class="services-section">
+  <div class="sec-grid"></div>
+  <div class="noise"></div>
+  <div class="sec-orb sec-orb-1"></div>
+  <div class="sec-orb sec-orb-2"></div>
+
+  <!-- HEADER -->
+  <div class="sec-header reveal">
+    <div class="sec-header-left">
+      <div class="sec-eyebrow">
+        <span class="eyebrow-blink"></span>
+        What We Do
+      </div>
+      <h2 class="sec-title">
+        <span class="st-normal">OUR</span><br/>
+        <span class="st-accent">CORE</span><br/>
+        <span class="st-outline">SERVICES</span>
+      </h2>
+    </div>
+    <div class="sec-right reveal reveal-delay-2">
+      <p class="sec-desc">
+        We don't just deliver projects — we engineer <strong>growth systems</strong>. Every service is precision-built to convert attention into revenue and traffic into loyal users.
+      </p>
+      <a href="#" class="sec-cta">
+        View All Services
+        <svg width="14" height="14" fill="none" viewBox="0 0 14 14">
+          <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- ACTIVE TABS -->
+  <div class="active-indicator reveal reveal-delay-3">
+    <div class="ai-item active" style="color:var(--cyan)">
+      <span class="ai-dot" style="background:var(--cyan)"></span>All Services
+    </div>
+    <div class="ai-item"><span class="ai-dot" style="background:var(--purple)"></span>Development</div>
+    <div class="ai-item"><span class="ai-dot" style="background:var(--amber)"></span>Marketing</div>
+    <div class="ai-item"><span class="ai-dot" style="background:var(--red)"></span>Design</div>
+    <div class="ai-item"><span class="ai-dot" style="background:var(--cyan)"></span>Strategy</div>
+  </div>
+
+  <!-- SERVICES GRID -->
+  <div class="services-grid">
+
+    <!-- 1 — WEB APP DEV (Featured, 2-col) -->
+    <div class="svc-card featured reveal reveal-delay-1"
+         style="--card-accent:var(--cyan);--glow-color:rgba(0,245,212,.09)">
+      <div class="card-inner-grid">
+        <div class="card-left">
+          <div class="card-num">
+            <span class="card-num-val">01 / 06</span>
+            <span class="card-tag" style="color:var(--cyan);border-color:rgba(0,245,212,.25);background:rgba(0,245,212,.06)">Most Popular</span>
+          </div>
+          <div class="card-icon-wrap" style="background:rgba(0,245,212,.1);box-shadow:0 0 30px rgba(0,245,212,.12)">
+            <svg width="26" height="26" fill="none" viewBox="0 0 24 24">
+              <rect x="2" y="3" width="20" height="14" rx="2" stroke="#00f5d4" stroke-width="1.7"/>
+              <path d="M8 21h8M12 17v4" stroke="#00f5d4" stroke-width="1.7" stroke-linecap="round"/>
+              <path d="M7 8l3 3-3 3M13 14h4" stroke="#00f5d4" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="card-title">Web App<br/>Development</h3>
+          <p class="card-desc">Blazing-fast, scalable web applications built with modern stacks. From MVPs to enterprise platforms — we architect systems that handle millions of users without breaking a sweat.</p>
+          <div class="tech-pills">
+            <span class="pill">React</span>
+            <span class="pill">Next.js</span>
+            <span class="pill">Node.js</span>
+            <span class="pill">PostgreSQL</span>
+            <span class="pill">AWS</span>
+          </div>
+          <a href="#" class="card-arrow">
+            Explore Service
+            <svg width="14" height="14" fill="none" viewBox="0 0 14 14">
+              <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+        <div class="card-metrics">
+          <div class="metric-row">
+            <div class="metric-label">Avg Load Time</div>
+            <div class="metric-bar-wrap">
+              <div class="metric-bar" style="width:90%;background:linear-gradient(90deg,var(--cyan),rgba(0,245,212,.4))"></div>
+            </div>
+            <div class="metric-val">0.8<em>s</em></div>
+          </div>
+          <div class="metric-row">
+            <div class="metric-label">Uptime SLA</div>
+            <div class="metric-bar-wrap">
+              <div class="metric-bar" style="width:99.9%;background:linear-gradient(90deg,var(--purple),rgba(180,75,255,.4))"></div>
+            </div>
+            <div class="metric-val">99.9<em>%</em></div>
+          </div>
+          <div class="metric-row">
+            <div class="metric-label">Conversion Lift</div>
+            <div class="metric-bar-wrap">
+              <div class="metric-bar" style="width:78%;background:linear-gradient(90deg,var(--amber),rgba(255,184,0,.4))"></div>
+            </div>
+            <div class="metric-val">+340<em>%</em></div>
+          </div>
+          <div class="metric-row">
+            <div class="metric-label">Projects Shipped</div>
+            <div class="metric-bar-wrap">
+              <div class="metric-bar" style="width:85%;background:linear-gradient(90deg,var(--red),rgba(255,77,109,.4))"></div>
+            </div>
+            <div class="metric-val">86<em>+</em></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2 — UI/UX DESIGN (tall) -->
+    <div class="svc-card tall reveal reveal-delay-2"
+         style="--card-accent:var(--purple);--glow-color:rgba(180,75,255,.09)">
+      <div class="card-num">
+        <span class="card-num-val">02 / 06</span>
+        <span class="card-tag" style="color:var(--purple);border-color:rgba(180,75,255,.25);background:rgba(180,75,255,.06)">Design</span>
+      </div>
+      <div class="card-icon-wrap" style="background:rgba(180,75,255,.1);box-shadow:0 0 30px rgba(180,75,255,.12)">
+        <svg width="26" height="26" fill="none" viewBox="0 0 24 24">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" stroke="#b44bff" stroke-width="1.7"/>
+          <path d="M8 12h8M12 8v8" stroke="#b44bff" stroke-width="1.7" stroke-linecap="round"/>
+          <circle cx="12" cy="12" r="3" stroke="#b44bff" stroke-width="1.7"/>
+        </svg>
+      </div>
+      <h3 class="card-title">UI / UX<br/>Design</h3>
+      <p class="card-desc">Interfaces that users fall in love with. We craft pixel-perfect designs grounded in psychology, accessibility, and conversion science.</p>
+      <div class="tall-visual">
+        <div class="bar-chart" id="barChart">
+          <div class="bar-col" style="height:45%"></div>
+          <div class="bar-col" style="height:70%"></div>
+          <div class="bar-col" style="height:55%"></div>
+          <div class="bar-col" style="height:90%"></div>
+          <div class="bar-col" style="height:65%"></div>
+          <div class="bar-col" style="height:80%"></div>
+          <div class="bar-col" style="height:100%"></div>
+        </div>
+        <div class="bar-labels">
+          <span class="bar-lbl">Mon</span>
+          <span class="bar-lbl">Tue</span>
+          <span class="bar-lbl">Wed</span>
+          <span class="bar-lbl">Thu</span>
+          <span class="bar-lbl">Fri</span>
+          <span class="bar-lbl">Sat</span>
+          <span class="bar-lbl">Sun</span>
+        </div>
+      </div>
+      <div class="tech-pills" style="margin-top:18px">
+        <span class="pill">Figma</span>
+        <span class="pill">Prototyping</span>
+        <span class="pill">Motion</span>
+      </div>
+      <a href="#" class="card-arrow">
+        See Process
+        <svg width="14" height="14" fill="none" viewBox="0 0 14 14">
+          <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+
+    <!-- 3 — DIGITAL MARKETING -->
+    <div class="svc-card reveal reveal-delay-3"
+         style="--card-accent:var(--amber);--glow-color:rgba(255,184,0,.08)">
+      <div class="card-num">
+        <span class="card-num-val">03 / 06</span>
+        <span class="card-tag" style="color:var(--amber);border-color:rgba(255,184,0,.25);background:rgba(255,184,0,.06)">Growth</span>
+      </div>
+      <div class="card-icon-wrap" style="background:rgba(255,184,0,.1);box-shadow:0 0 30px rgba(255,184,0,.1)">
+        <svg width="26" height="26" fill="none" viewBox="0 0 24 24">
+          <path d="M3 17l4-4 4 4 4-6 4 2" stroke="#ffb800" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="7" cy="13" r="1.5" fill="#ffb800"/>
+          <circle cx="11" cy="17" r="1.5" fill="#ffb800"/>
+          <circle cx="15" cy="11" r="1.5" fill="#ffb800"/>
+          <circle cx="19" cy="13" r="1.5" fill="#ffb800"/>
+        </svg>
+      </div>
+      <h3 class="card-title">Digital<br/>Marketing</h3>
+      <p class="card-desc">Data-driven campaigns that flood your pipeline. From paid ads to content strategy — every rupee works harder with our performance marketing system.</p>
+      <div class="process-steps">
+        <div class="ps-item">
+          <span class="ps-num">01</span>
+          <span class="ps-text">Audience Research & Mapping</span>
+          <span class="ps-dot" style="background:var(--cyan)"></span>
+        </div>
+        <div class="ps-item">
+          <span class="ps-num">02</span>
+          <span class="ps-text">Multi-Channel Campaign Launch</span>
+          <span class="ps-dot" style="background:var(--amber)"></span>
+        </div>
+        <div class="ps-item">
+          <span class="ps-num">03</span>
+          <span class="ps-text">Real-time Optimization Loop</span>
+          <span class="ps-dot" style="background:var(--purple)"></span>
+        </div>
+      </div>
+      <a href="#" class="card-arrow" style="margin-top:20px">
+        Boost ROI Now
+        <svg width="14" height="14" fill="none" viewBox="0 0 14 14">
+          <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+
+    <!-- 4 — SEO -->
+    <div class="svc-card reveal reveal-delay-4"
+         style="--card-accent:var(--cyan);--glow-color:rgba(0,245,212,.08)">
+      <div class="card-num">
+        <span class="card-num-val">04 / 06</span>
+        <span class="card-tag" style="color:var(--cyan);border-color:rgba(0,245,212,.25);background:rgba(0,245,212,.06)">Organic</span>
+      </div>
+      <div class="card-icon-wrap" style="background:rgba(0,245,212,.1);box-shadow:0 0 30px rgba(0,245,212,.1)">
+        <svg width="26" height="26" fill="none" viewBox="0 0 24 24">
+          <circle cx="11" cy="11" r="7" stroke="#00f5d4" stroke-width="1.7"/>
+          <path d="M20 20l-3-3" stroke="#00f5d4" stroke-width="1.7" stroke-linecap="round"/>
+          <path d="M8 11h6M11 8v6" stroke="#00f5d4" stroke-width="1.7" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <h3 class="card-title">SEO &<br/>Content</h3>
+      <p class="card-desc">Dominate search rankings with technical SEO, authority content, and strategic link building. Your competitors won't see you coming.</p>
+      <div class="tech-pills">
+        <span class="pill">Technical SEO</span>
+        <span class="pill">Link Building</span>
+        <span class="pill">Content Strategy</span>
+        <span class="pill">Analytics</span>
+      </div>
+      <a href="#" class="card-arrow">
+        Rank #1
+        <svg width="14" height="14" fill="none" viewBox="0 0 14 14">
+          <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+
+    <!-- 5 — BRAND IDENTITY -->
+    <div class="svc-card reveal reveal-delay-5"
+         style="--card-accent:var(--red);--glow-color:rgba(255,77,109,.08)">
+      <div class="card-num">
+        <span class="card-num-val">05 / 06</span>
+        <span class="card-tag" style="color:var(--red);border-color:rgba(255,77,109,.25);background:rgba(255,77,109,.06)">Identity</span>
+      </div>
+      <div class="card-icon-wrap" style="background:rgba(255,77,109,.1);box-shadow:0 0 30px rgba(255,77,109,.1)">
+        <svg width="26" height="26" fill="none" viewBox="0 0 24 24">
+          <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" stroke="#ff4d6d" stroke-width="1.7" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h3 class="card-title">Brand<br/>Identity</h3>
+      <p class="card-desc">Logos, systems, and brand voices that make you impossible to ignore. We build brands that command premium pricing and lasting loyalty.</p>
+      <div class="process-steps">
+        <div class="ps-item">
+          <span class="ps-num">01</span>
+          <span class="ps-text">Discovery & Positioning</span>
+          <span class="ps-dot" style="background:var(--red)"></span>
+        </div>
+        <div class="ps-item">
+          <span class="ps-num">02</span>
+          <span class="ps-text">Visual Identity System</span>
+          <span class="ps-dot" style="background:var(--amber)"></span>
+        </div>
+      </div>
+      <a href="#" class="card-arrow" style="margin-top:20px">
+        Build Brand
+        <svg width="14" height="14" fill="none" viewBox="0 0 14 14">
+          <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+
+    <!-- 6 — E-COMMERCE -->
+    <div class="svc-card reveal reveal-delay-6"
+         style="--card-accent:var(--purple);--glow-color:rgba(180,75,255,.09)">
+      <div class="card-num">
+        <span class="card-num-val">06 / 06</span>
+        <span class="card-tag" style="color:var(--purple);border-color:rgba(180,75,255,.25);background:rgba(180,75,255,.06)">Commerce</span>
+      </div>
+      <div class="card-icon-wrap" style="background:rgba(180,75,255,.1);box-shadow:0 0 30px rgba(180,75,255,.12)">
+        <svg width="26" height="26" fill="none" viewBox="0 0 24 24">
+          <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" stroke="#b44bff" stroke-width="1.7" stroke-linejoin="round"/>
+          <path d="M3 6h18" stroke="#b44bff" stroke-width="1.7"/>
+          <path d="M16 10a4 4 0 0 1-8 0" stroke="#b44bff" stroke-width="1.7" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <h3 class="card-title">E-Commerce<br/>Solutions</h3>
+      <p class="card-desc">High-converting storefronts built to scale. Custom Shopify, headless commerce, and payment systems that turn browsers into buyers.</p>
+      <div class="tech-pills">
+        <span class="pill">Shopify</span>
+        <span class="pill">Headless</span>
+        <span class="pill">Stripe</span>
+        <span class="pill">Razorpay</span>
+      </div>
+      <a href="#" class="card-arrow">
+        Sell More
+        <svg width="14" height="14" fill="none" viewBox="0 0 14 14">
+          <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+
+  </div><!-- /grid -->
+
+  <!-- BOTTOM BAR -->
+  <div class="services-bottom reveal">
+    <p class="sb-text">Have a project in mind? <strong>Let's talk →</strong></p>
+    <div class="trust-badges">
+      <div class="trust-badge">
+        <div class="tb-icon">
+          <svg width="12" height="12" fill="none" viewBox="0 0 12 12">
+            <circle cx="6" cy="6" r="5" stroke="#00f5d4" stroke-width="1.2"/>
+            <path d="M4 6l1.5 1.5L8 4" stroke="#00f5d4" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        Free Consultation
+      </div>
+      <div class="trust-badge">
+        <div class="tb-icon">
+          <svg width="12" height="12" fill="none" viewBox="0 0 12 12">
+            <path d="M6 1l1.5 3 3.3.5-2.4 2.3.6 3.2L6 8.5 3 10l.6-3.2L1.2 4.5l3.3-.5L6 1z" stroke="#ffb800" stroke-width="1.2" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        5-Star Rated
+      </div>
+      <div class="trust-badge">
+        <div class="tb-icon">
+          <svg width="12" height="12" fill="none" viewBox="0 0 12 12">
+            <path d="M6 1C3.2 1 1 3.2 1 6s2.2 5 5 5 5-2.2 5-5-2.2-5-5-5z" stroke="#b44bff" stroke-width="1.2"/>
+            <path d="M4 6.5l1.5 1.5L8.5 4" stroke="#b44bff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        NDA Protected
+      </div>
+      <div class="trust-badge">
+        <div class="tb-icon">
+          <svg width="12" height="12" fill="none" viewBox="0 0 12 12">
+            <rect x="1" y="3" width="10" height="7" rx="1.5" stroke="#ff4d6d" stroke-width="1.2"/>
+            <path d="M4 3V2.5a2 2 0 0 1 4 0V3" stroke="#ff4d6d" stroke-width="1.2"/>
+          </svg>
+        </div>
+        100% Ownership
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<script>
+// ── CURSOR ──
+const cur = document.getElementById('cursor');
+const rng = document.getElementById('ring');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{
+  mx=e.clientX;my=e.clientY;
+  cur.style.left=mx+'px';cur.style.top=my+'px';
+});
+(function animRing(){
+  rx+=(mx-rx)*.11;ry+=(my-ry)*.11;
+  rng.style.left=rx+'px';rng.style.top=ry+'px';
+  requestAnimationFrame(animRing);
+})();
+document.querySelectorAll('a,.svc-card,.ai-item,.trust-badge,.sec-cta').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{cur.classList.add('big');rng.classList.add('big')});
+  el.addEventListener('mouseleave',()=>{cur.classList.remove('big');rng.classList.remove('big')});
+});
+
+// ── MOUSE GLOW ON CARDS ──
+document.querySelectorAll('.svc-card').forEach(card=>{
+  card.addEventListener('mousemove',e=>{
+    const r=card.getBoundingClientRect();
+    const x=((e.clientX-r.left)/r.width*100).toFixed(1)+'%';
+    const y=((e.clientY-r.top)/r.height*100).toFixed(1)+'%';
+    card.style.setProperty('--mx',x);
+    card.style.setProperty('--my',y);
+  });
+});
+
+// ── SCROLL REVEAL ──
+const revealEls=document.querySelectorAll('.reveal');
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}
+  });
+},{threshold:.12});
+revealEls.forEach(el=>io.observe(el));
+
+// ── METRIC BARS ──
+const bars=document.querySelectorAll('.metric-bar');
+const barIo=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('animated');
+      barIo.unobserve(e.target);
+    }
+  });
+},{threshold:.3});
+bars.forEach((b,i)=>{b.style.transitionDelay=(i*.18)+'s';barIo.observe(b)});
+
+// ── BAR CHART ──
+const barCols=document.querySelectorAll('.bar-col');
+const chartIo=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      barCols.forEach((b,i)=>{
+        setTimeout(()=>b.classList.add('animated'),i*80);
+      });
+      chartIo.disconnect();
+    }
+  });
+},{threshold:.3});
+const chart=document.getElementById('barChart');
+if(chart)chartIo.observe(chart);
+
+// ── TAB FILTER (visual only) ──
+document.querySelectorAll('.ai-item').forEach(item=>{
+  item.addEventListener('click',()=>{
+    document.querySelectorAll('.ai-item').forEach(i=>i.classList.remove('active'));
+    item.classList.add('active');
+  });
+});
+
+// ── STAGGER CARD ENTRANCES ──
+document.querySelectorAll('.svc-card').forEach((card,i)=>{
+  card.style.transitionDelay=(i*.08)+'s';
+});
+</script>
+</body>
+</html>

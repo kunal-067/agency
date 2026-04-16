@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>VERK — Digital Products Studio</title>
+    <link rel="shortcut icon" href="./assets/techbooth_logo.ico" type="image/x-icon">
+    <title>TECHBOOTH — Digital Products Studio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -12,6 +13,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="navbar.css">
     <link rel="stylesheet" href="hero.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
@@ -27,8 +29,16 @@
     <!-- ══════════════ NAVBAR ══════════════ -->
     <nav id="navbar">
         <div class="nav-inner">
-            <a href="#" class="nav-logo">VERK<span class="nav-logo-accent">.</span><span
-                    class="nav-logo-version">v2.4</span></a>
+            <a href="#" class="nav-logo" aria-label="TechBooth Home">
+                TECHBOOTH<span class="nav-logo-accent">.</span>
+                <span class="nav-logo-version">v2.4</span>
+            </a>
+
+            <!-- mobile logo       -->
+            <a href="/" class="mb-nav-logo" aria-label="TechBooth Home">
+                <span class="logo-bracket">[</span>TB<span class="logo-bracket">]</span>
+                <span class="logo-dot" aria-hidden="true"></span>
+            </a>
 
             <ul class="nav-links">
                 <li><a href="#services">Services</a></li>
@@ -69,7 +79,7 @@
         <div class="orb orb-1"></div>
         <div class="orb orb-2"></div>
         <div class="orb orb-3"></div>
-        
+
         <!-- TICKER -->
         <div class="ticker-wrap">
             <div class="ticker">
