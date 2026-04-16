@@ -1392,10 +1392,6 @@ footer {
         display: none;
     }
 
-     .hamburger {
-        display: flex;
-    }
-
     .hero-h1 {
         font-size: clamp(58px, 14vw, 88px);
     }
